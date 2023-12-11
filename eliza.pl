@@ -33,7 +33,7 @@ template([yo, soy, s(_),'.'], [porque, eres, tu, 0, '?'], [2]).
 template([te, gustan, las, s(_), _], [flagLike], [3]).
 template([te, gustan, los, s(_), _], [flagLike], [3]).
 
-		 % pregunta algo que hace eliza
+% pregunta algo que hace eliza
 template([tu, eres, s(_), _], [flagIs], [2]).
 % pregunta algo que es eliza
 template([que, eres, tu, s(_)], [flagIs], [3]).
@@ -51,7 +51,6 @@ template([eliza, eres, una, s(_), '?'], [flagEs], [3]).
 
 
 % aqui se empieza a hacer los sintomas del herpes
-template([tengo, s(_)], [flagSint], [1]).
 template([s(_), es, un, sintoma, '?'], [flagSint], [0]).
 template([el, s(_), es, un, sintoma, '?'], [flagSint], [1]).
 template([la, s(_), es, un, sintoma, '?'], [flagSint], [1]).
@@ -60,21 +59,46 @@ template([los, s(_), es, un, sintoma, '?'], [flagSint], [1]).
 template([tengo, s(_), es, malo], [flagSint], [1]).
 template([tengo, s(_), es, un, sintoma, '?'], [flagSint], [1]).
 
+% aqui se empieza a hacer los sintomas del herpes 2
+template([tengo, s(_), y, s(_), puede, ser, herpes, '?'], [flagSint1], [1, 3]).
+template([los, sintomas, s(_), y, s(_), son, del, herpes, '?'], [flagSint1], [2, 4]).
+template([s(_), y, s(_), son, sintomas, '?'], [flagSint1], [0, 2]).
+template([s(_), y, s(_), son, sintomas, del, herpes, '?'], [flagSint1], [0, 2]).
+
+
+% aqui se empieza a hacer los sintomas del herpes 3
+template([tengo, s(_), s(_), y, s(_), puede, ser, herpes, '?'], [flagSint2], [1, 2, 4]).
+template([los, sintomas, s(_), s(_), y, s(_), son, del, herpes, '?'], [flagSint2], [2, 3, 5]).
+template([s(_), s(_), y, s(_), son, sintomas, '?'], [flagSint2], [0, 1, 3]).
+template([s(_), s(_), y, s(_), son, sintomas, del, herpes, '?'], [flagSint2], [0, 1, 3]).
+
+
 template([como, se, si, tengo, herpes, '?'], [la, mejor, forma, de, saber, es, llendo, al, medico, a, hacerte, estudios, pero, existen, sintomas], []).
 template([cuales, son, los, sintomas, del, herpes, '?'], [los, principales, sintomas, del, herpes, son, :, fiebre, ampollas, ulceras, picazon, y, dolor_corporal], []).
 template([cuales, son, los, sintomas, del, herpes], [los, principales, sintomas, del, herpes, son, :, fiebre, ampollas, ulceras, picazon, y, dolor_corporal], []).
 template([que, sintomas, tiene, el, herpes, '?'], [los, principales, sintomas, del, herpes, son, :, fiebre, ampollas, ulceras, picazon, y, dolor_corporal, entre, otros], []).
 
-% lugares donde salen gallas
-template([las, gallas, en, el, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
-template([las, gallas, en, la, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
-template([las, gallas, en, los, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
-template([tener, gallas, en, el, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
-template([tener, gallas, en, la, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
-template([tener, gallas, en, los, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
-template([gallas, en, el, s(_), es, un, sintoma, '?'], [flagGallas], [3]).
-template([gallas, en, la, s(_), es, un, sintoma, '?'], [flagGallas], [3]).
-template([gallas, en, los, s(_), es, un, sintoma, '?'], [flagGallas], [3]).
+
+
+% lugares donde salen llagas
+template([las, llagas, en, el, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
+template([las, llagas, en, la, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
+template([las, llagas, en, los, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
+template([tener, llagas, en, el, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
+template([tener, llagas, en, la, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
+template([tener, llagas, en, los, s(_), es, un, sintoma, '?'], [flagGallas], [4]).
+template([llagas, en, el, s(_), es, un, sintoma, '?'], [flagGallas], [3]).
+template([llagas, en, la, s(_), es, un, sintoma, '?'], [flagGallas], [3]).
+template([llagas, en, los, s(_), es, un, sintoma, '?'], [flagGallas], [3]).
+template([las, llagas, en, el, s(_), es, herpes, '?'], [flagGallas], [4]).
+template([las, llagas, en, la, s(_), es, herpes, '?'], [flagGallas], [4]).
+template([las, llagas, en, los, s(_), es, herpes, '?'], [flagGallas], [4]).
+template([tener, llagas, en, el, s(_), es, herpes, '?'], [flagGallas], [4]).
+template([tener, llagas, en, la, s(_), es, herpes, '?'], [flagGallas], [4]).
+template([tener, llagas, en, los, s(_), es, herpes, '?'], [flagGallas], [4]).
+template([llagas, en, el, s(_), es, herpes, '?'], [flagGallas], [3]).
+template([llagas, en, la, s(_), es, herpes, '?'], [flagGallas], [3]).
+template([llagas, en, los, s(_), es, herpes, '?'], [flagGallas], [3]).
 
 % como prevenirlo
 template([como, puedo, prevenir, el, herpes, '?'], [las, mejores, formas, de, prevenirlo, son, teniendo, pareja, sexual, estable, usando, preservativos, y, no, tener, relaciones, con, alguien, con, sintomas], []).
@@ -162,19 +186,176 @@ likes(pokemon).
 
 
 % sintomas de herpes: flagSint
-sintomaHerpes(X, R):- sint0(X), R = [eso,'Si', es, sintoma, del, herpes].
-sintomaHerpes(X, R):- \+sint0(X), R = [eso,'No', es, sintoma, del, herpes].
+sintomaHerpes(X, R):- sint0(X), R = [ese,'Si', es, un, sintoma, del, herpes].
+sintomaHerpes(X, R):- \+sint0(X), R = [ese,'No', es, un, sintoma, del, herpes].
 sint0(fiebre).
 sint0(dolores_corporales).
 sint0(dolor_corporal).
 sint0(picazon).
 sint0(ampollas).
 sint0(dolor_de_cabeza).
+sint0(dolores_de_cabeza).
+sint0(dolores_de_garganta).
 sint0(dolor_de_garganta).
 sint0(ulceras).
 sint0(miccion).
 sint0(miccion_dolorosa).
 sint0(secrecion_vaginal).
+
+
+
+% sintomas de herpes: flagSint1
+sintomaHerpes1(X, Y, R):- sint1(X, Y), R = [con, esos, 2, sintomas, 'Si', es, probable, que, sea, herpes].
+sintomaHerpes1(X, Y, R):- \+sint1(X, Y), R = [con, esos, 2, sintomas, 'No', es, problable, que, sea, herpes].
+sint1(fiebre, picazon).
+sint1(fiebre, ampollas).
+sint1(fiebre, ulceras).
+sint1(fiebre, dolor_corporal).
+
+sint1(dolor_corporal, fiebre).
+sint1(dolor_corporal, ampollas).
+sint1(dolor_corporal, ulceras).
+sint1(dolor_corporal, dolor_corporal).
+sint1(dolor_corporal, miccion).
+sint1(dolor_corporal, ampollas).
+
+sint1(picazon, fiebre).
+sint1(picazon, ampollas).
+sint1(picazon, ulceras).
+sint1(picazon, dolor_corporal).
+sint1(picazon, miccion).
+sint1(picazon, ampollas).
+
+sint1(ampollas, fiebre).
+sint1(ampollas, ampollas).
+sint1(ampollas, picazon).
+sint1(ampollas, ulceras).
+sint1(ampollas, dolor_corporal).
+sint1(ampollas, miccion).
+sint1(ampollas, dolor_de_cabeza).
+
+sint1(dolor_de_cabeza, fiebre).
+sint1(dolor_de_cabeza, picazon).
+sint1(dolor_de_cabeza, ulceras).
+sint1(dolor_de_cabeza, ampollas).
+sint1(dolor_de_cabeza, miccion).
+sint1(dolor_de_cabeza, dolor_corporal).
+sint1(dolor_de_cabeza, dolor_de_garganta).
+
+sint1(dolor_de_garganta, fiebre).
+sint1(dolor_de_garganta, ampollas).
+sint1(dolor_de_garganta, ulceras).
+sint1(dolor_de_garganta, dolor_corporal).
+sint1(dolor_de_garganta, miccion).
+sint1(dolor_de_garganta, ampollas).
+sint1(dolor_de_garganta, dolor_de_cabeza).
+sint1(dolor_de_garganta, secrecion_vaginal).
+
+sint1(ulceras, fiebre).
+sint1(ulceras, ampollas).
+sint1(ulceras, ulceras).
+sint1(ulceras, dolor_corporal).
+sint1(ulceras, miccion).
+sint1(ulceras, dolor_de_cabeza).
+sint1(ulceras, secrecion_vaginal).
+sint1(ulceras, dolor_de_cabeza).
+
+sint1(miccion, fiebre).
+sint1(miccion, ampollas).
+sint1(miccion, ulceras).
+sint1(miccion, dolor_corporal).
+sint1(miccion, miccion).
+sint1(miccion, dolor_de_cabeza).
+sint1(miccion, secrecion_vaginal).
+
+sint1(secrecion_vaginal, fiebre).
+sint1(secrecion_vaginal, miccion).
+sint1(secrecion_vaginal, ulceras).
+sint1(secrecion_vaginal, dolor_corporal).
+sint1(secrecion_vaginal, dolor_de_cabeza).
+sint1(secrecion_vaginal, secrecion_vaginal).
+sint1(secrecion_vaginal, miccion).
+
+
+
+
+
+% sintomas de herpes: flagSint2
+sintomaHerpes2(X, Y, Z, R):- sint2(X, Y, Z), R = [con, esos, 3, sintomas, 'Si', es, probable, que, sea, herpes].
+sintomaHerpes2(X, Y, Z, R):- \+sint2(X, Y, Z), R = [con, esos, 3, sintomas, 'No', es, problable, que, sea, herpes].
+sint2(fiebre, picazon, ampollas).
+sint2(fiebre, ampollas, picazon).
+sint2(fiebre, ulceras, miccion).
+sint2(fiebre, dolor_corporal, dolor_de_cabeza).
+sint2(fiebre, dolor_de_cabeza, picazon).
+sint2(fiebre, miccion, ampollas, picazon).
+sint2(fiebre, secrecion_vaginal, ampollas).
+
+
+
+sint2(dolor_corporal, fiebre, ampollas).
+sint2(dolor_corporal, ampollas, fiebre).
+sint2(dolor_corporal, ulceras, miccion).
+sint2(dolor_corporal, dolor_corporal, fiebre).
+sint2(dolor_corporal, miccion, ampollas).
+sint2(dolor_corporal, ampollas, miccion).
+
+sint2(picazon, fiebre, ampollas).
+sint2(picazon, ampollas, miccion).
+sint2(picazon, ulceras, ampollas).
+sint2(picazon, dolor_corporal, fiebre).
+sint2(picazon, miccion, ulceras).
+sint2(picazon, ampollas, miccion).
+
+sint2(ampollas, fiebre, ulceras).
+sint2(ampollas, ampollas, fiebre).
+sint2(ampollas, picazon, miccion).
+sint2(ampollas, ulceras, picazon).
+sint2(ampollas, dolor_corporal, fiebre).
+sint2(ampollas, miccion, ulceras).
+sint2(ampollas, dolor_de_cabeza, miccion).
+
+sint2(dolor_de_cabeza, fiebre, ampollas).
+sint2(dolor_de_cabeza, ampollas, picazon).
+sint2(dolor_de_cabeza, ulceras, miccion).
+sint2(dolor_de_cabeza, ampollas, fiebre).
+sint2(dolor_de_cabeza, miccion, dolor_corporal).
+sint2(dolor_de_cabeza, dolor_corporal, miccion).
+sint2(dolor_de_cabeza, dolor_de_garganta, fiebre).
+
+sint2(dolor_de_garganta, fiebre).
+sint2(dolor_de_garganta, ampollas).
+sint2(dolor_de_garganta, ulceras).
+sint2(dolor_de_garganta, dolor_corporal).
+sint2(dolor_de_garganta, miccion).
+sint2(dolor_de_garganta, ampollas).
+sint2(dolor_de_garganta, dolor_de_cabeza).
+sint2(dolor_de_garganta, secrecion_vaginal).
+
+sint2(ulceras, fiebre, picazon).
+sint2(ulceras, ampollas, fiebre).
+sint2(ulceras, ulceras, ampollas).
+sint2(ulceras, dolor_corporal, dolor_corporal).
+sint2(ulceras, miccion, ampollas).
+sint2(ulceras, dolor_de_cabeza, miccion).
+sint2(ulceras, secrecion_vaginal, ampollas).
+sint2(ulceras, dolor_de_cabeza, fiebre).
+
+sint2(miccion, fiebre, ampollas).
+sint2(miccion, ampollas, ulceras).
+sint2(miccion, ulceras, dolor_corporal).
+sint2(miccion, dolor_corporal, fiebre).
+sint2(miccion, ulceras, fiebre).
+sint2(miccion, dolor_de_cabeza, ulceras).
+sint2(miccion, secrecion_vaginal, ampollas).
+
+sint2(secrecion_vaginal, fiebre, miccion).
+sint2(secrecion_vaginal, miccion, fiebre).
+sint2(secrecion_vaginal, ulceras, miccion).
+sint2(secrecion_vaginal, dolor_corporal, ampollas).
+sint2(secrecion_vaginal, dolor_de_cabeza, fiebre).
+sint2(secrecion_vaginal, secrecion_vaginal, ampollas).
+sint2(secrecion_vaginal, miccion, ulceras).
 
 
 
@@ -426,14 +607,6 @@ debil(arcanine, agua_tierra_roca).
 
 
 
-
-
-
-
-
-
-
-
 match([],[]).
 match([], _):- true.
 
@@ -470,6 +643,31 @@ replace0([I|_], Input, _, Resp, R):-
 	nth0(0, Resp, X),
 	X == flagSint,
 	sintomaHerpes(Atom, R).
+
+
+% sintomaHerpes sint1:
+replace0([I,J|_], Input, _, Resp, R):-
+	nth0(I, Input, Atom),
+	nth0(0, Resp, X),
+	X == flagSint1,
+	nth0(J, Input, Atom1),
+	nth0(0, Resp, Y),
+	Y == flagSint1,
+	sintomaHerpes1(Atom, Atom1, R).
+
+
+% sintomaHerpes sint2:
+replace0([I,J,K|_], Input, _, Resp, R):-
+	nth0(I, Input, Atom),
+	nth0(0, Resp, X),
+	X == flagSint2,
+	nth0(J, Input, Atom1),
+	nth0(0, Resp, Y),
+	Y == flagSint2,
+	nth0(K, Input, Atom2),
+	nth0(0, Resp, Z),
+	Z == flagSint2,
+	sintomaHerpes2(Atom, Atom1, Atom2, R).
 
 % lugarGallas gallasEn:
 replace0([I|_], Input, _, Resp, R):-
